@@ -35,6 +35,8 @@ struct HomeView: View {
                 VStack {
                     ProgressBar().environmentObject(util)
                     Spacer()
+                    Chests().environmentObject(util)
+                    Spacer()
                     Assignments().environmentObject(util)
                 }
                 .padding(.horizontal, 20.0)

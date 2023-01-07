@@ -13,6 +13,7 @@
 		D72E3DE929699B1900656D7D /* TabBar in Frameworks */ = {isa = PBXBuildFile; productRef = D72E3DE829699B1900656D7D /* TabBar */; };
 		D72E3DEB2969A92F00656D7D /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72E3DEA2969A92F00656D7D /* DropdownView.swift */; };
 		D77294282969F8D100F6EBD4 /* Assignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77294272969F8D100F6EBD4 /* Assignments.swift */; };
+		D772942A296A16DA00F6EBD4 /* Chests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7729429296A16DA00F6EBD4 /* Chests.swift */; };
 		D7A923CA29603B490057ECA1 /* dexterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A923C929603B490057ECA1 /* dexterApp.swift */; };
 		D7A923CE29603B4A0057ECA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A923CD29603B4A0057ECA1 /* Assets.xcassets */; };
 		D7A923D129603B4A0057ECA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A923D029603B4A0057ECA1 /* Preview Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		D72E3DE529688CD600656D7D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D72E3DEA2969A92F00656D7D /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		D77294272969F8D100F6EBD4 /* Assignments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignments.swift; sourceTree = "<group>"; };
+		D7729429296A16DA00F6EBD4 /* Chests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chests.swift; sourceTree = "<group>"; };
 		D7A923C629603B490057ECA1 /* dexter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dexter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A923C929603B490057ECA1 /* dexterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dexterApp.swift; sourceTree = "<group>"; };
 		D7A923CD29603B4A0057ECA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				D7AEFC6F2967883500EFA6C5 /* ProgressBar.swift */,
 				D77294272969F8D100F6EBD4 /* Assignments.swift */,
+				D7729429296A16DA00F6EBD4 /* Chests.swift */,
 			);
 			path = HomeViewAssets;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				D72E3DEB2969A92F00656D7D /* DropdownView.swift in Sources */,
 				D7A923E3296041830057ECA1 /* LoginView.swift in Sources */,
 				D7A923E5296042750057ECA1 /* HomeView.swift in Sources */,
+				D772942A296A16DA00F6EBD4 /* Chests.swift in Sources */,
 				D72E3DE429688BF100656D7D /* CollectionView.swift in Sources */,
 				D7A923D829603B660057ECA1 /* RootView.swift in Sources */,
 			);

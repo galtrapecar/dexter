@@ -50,7 +50,7 @@ class Util: ObservableObject {
         case subject
     }
     
-    @Published var page = Page.home
+    @Published var page = Page.login
     @Published var points = 63.0;
     
     func set_page(_page: Page) {
