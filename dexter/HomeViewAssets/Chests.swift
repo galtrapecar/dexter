@@ -63,10 +63,8 @@ struct Chest: View {
                 }
                 .animation(animate ? Animation.linear(duration: 0.1).repeatForever(autoreverses: true) : Animation.easeOut(duration: 0.1))
                 .onReceive(timer) { _ in
-                    print("Stopping timer for 10 seconds")
                     timer.upstream.connect().cancel()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                        print("Starting timer again")
                         if (openable){
                             self.animate.toggle()
                             timer = Timer.publish(every: 0.4, on: .main, in: .common).autoconnect()

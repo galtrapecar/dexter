@@ -8,13 +8,44 @@
 import SwiftUI
 
 struct CalendarView: View {
+    @EnvironmentObject var util: Util
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Image("forest3")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                VStack(spacing: 15) {
+                    DateSelection()
+                    Schedule()
+                }
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity,
+                    alignment: .top
+                )
+                .padding(20)
+                .padding(.top, 50)
+            }
+            .frame(
+                width: UIScreen.main.bounds.width,
+                height: UIScreen.main.bounds.height
+            )
+        }
+        .frame(
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height
+        )
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView()
+        CalendarView().environmentObject(Util())
     }
 }

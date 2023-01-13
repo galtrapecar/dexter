@@ -9,6 +9,19 @@ import SwiftUI
 import FirebaseCore
 import FirebaseAuth
 
+extension View {
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content) -> some View {
+
+        ZStack(alignment: alignment) {
+            placeholder().opacity(shouldShow ? 1 : 0)
+            self
+        }
+    }
+}
+
 struct ButtonPrimary : ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -82,10 +95,25 @@ struct Login: View {
     var body: some View {
         VStack {
             ZStack(alignment: .trailing) {
-                TextField("Student ID", text: $username)
+                TextField("", text: $username)
                     .frame(
                         height: 40.0
                     )
+                    .font(
+                        .system(
+                            size: 13
+                        )
+                    )
+                    .foregroundColor(.black)
+                    .placeholder(when: username.isEmpty) {
+                        Text("Student ID")
+                            .foregroundColor(.gray)
+                            .font(
+                                .system(
+                                    size: 13
+                                )
+                            )
+                    }
                 
                 VStack {
                     Image("user")
@@ -110,11 +138,25 @@ struct Login: View {
             .padding(.top, 80.0)
             
             ZStack(alignment: .trailing) {
-                SecureField("Password", text: $password)
+                SecureField("", text: $password)
                     .frame(
                         height: 40.0
                     )
-                
+                    .font(
+                        .system(
+                            size: 13
+                        )
+                    )
+                    .foregroundColor(.black)
+                    .placeholder(when: password.isEmpty) {
+                        Text("Password")
+                            .foregroundColor(.gray)
+                            .font(
+                                .system(
+                                    size: 13
+                                )
+                            )
+                    }
                 VStack {
                     Image("password")
                         .resizable()
@@ -145,7 +187,7 @@ struct Login: View {
             } else {
                 Button(action: {}, label: {
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
+                        .progressViewStyle(CircularProgressViewStyle(tint: Color.black))
                 })
                     .modifier(ButtonPrimary())
             }
@@ -169,6 +211,7 @@ struct Login: View {
                             weight: Font.Weight.bold
                         )
                     )
+                    .foregroundColor(.black)
                 
                 Text("Contact your School.")
                     .font(
@@ -182,6 +225,7 @@ struct Login: View {
                             .frame(height: 1)
                             .offset(y: 10)
                     )
+                    .foregroundColor(.black)
             }
             
             Spacer()
@@ -238,5 +282,11 @@ struct LoginView: View {
             height: UIScreen.main.bounds.height
         )
         
+    }
+}
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView().environmentObject(Util())
     }
 }

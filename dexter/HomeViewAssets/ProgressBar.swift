@@ -118,6 +118,7 @@ struct ProgressBar: View {
                                     weight: Font.Weight.bold
                                 )
                             )
+                            .foregroundColor(.black)
                     }
                     .frame(
                         width: 50.0,
