@@ -13,6 +13,9 @@
 		49C23DEE2970B29E0039F961 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 49C23DED2970B29E0039F961 /* FirebaseFirestoreSwift */; };
 		49C23DF12970C5230039F961 /* DateSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C23DF02970C5230039F961 /* DateSelection.swift */; };
 		49C23DF42970C9F60039F961 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C23DF32970C9F60039F961 /* Schedule.swift */; };
+		49DBC7EC2972140400D76617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DBC7EB2972140400D76617 /* Assets.xcassets */; };
+		49DBC7EE29733D5600D76617 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBC7ED29733D5600D76617 /* MenuView.swift */; };
+		49DBC7F02973468800D76617 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBC7EF2973468800D76617 /* SubjectView.swift */; };
 		D72E3DE229688AF700656D7D /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72E3DE129688AF700656D7D /* CalendarView.swift */; };
 		D72E3DE429688BF100656D7D /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72E3DE329688BF100656D7D /* CollectionView.swift */; };
 		D72E3DE629688CD600656D7D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72E3DE529688CD600656D7D /* SettingsView.swift */; };
@@ -21,7 +24,6 @@
 		D77294282969F8D100F6EBD4 /* Assignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77294272969F8D100F6EBD4 /* Assignments.swift */; };
 		D772942A296A16DA00F6EBD4 /* Chests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7729429296A16DA00F6EBD4 /* Chests.swift */; };
 		D7A923CA29603B490057ECA1 /* dexterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A923C929603B490057ECA1 /* dexterApp.swift */; };
-		D7A923CE29603B4A0057ECA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A923CD29603B4A0057ECA1 /* Assets.xcassets */; };
 		D7A923D129603B4A0057ECA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A923D029603B4A0057ECA1 /* Preview Assets.xcassets */; };
 		D7A923D829603B660057ECA1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A923D729603B660057ECA1 /* RootView.swift */; };
 		D7A923E1296040E90057ECA1 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A923E0296040E90057ECA1 /* Util.swift */; };
@@ -34,6 +36,9 @@
 		49C23DE4297091450039F961 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49C23DF02970C5230039F961 /* DateSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelection.swift; sourceTree = "<group>"; };
 		49C23DF32970C9F60039F961 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		49DBC7EB2972140400D76617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49DBC7ED29733D5600D76617 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		49DBC7EF2973468800D76617 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
 		D72E3DE129688AF700656D7D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		D72E3DE329688BF100656D7D /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		D72E3DE529688CD600656D7D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -42,7 +47,6 @@
 		D7729429296A16DA00F6EBD4 /* Chests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chests.swift; sourceTree = "<group>"; };
 		D7A923C629603B490057ECA1 /* dexter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dexter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A923C929603B490057ECA1 /* dexterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dexterApp.swift; sourceTree = "<group>"; };
-		D7A923CD29603B4A0057ECA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A923D029603B4A0057ECA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D7A923D729603B660057ECA1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		D7A923E0296040E90057ECA1 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -107,15 +111,17 @@
 				D7AEFC6E2967880C00EFA6C5 /* HomeViewAssets */,
 				D7A923C929603B490057ECA1 /* dexterApp.swift */,
 				D7A923D729603B660057ECA1 /* RootView.swift */,
+				49DBC7EB2972140400D76617 /* Assets.xcassets */,
 				D7A923E0296040E90057ECA1 /* Util.swift */,
 				D7A923E2296041830057ECA1 /* LoginView.swift */,
 				D7A923E4296042750057ECA1 /* HomeView.swift */,
-				D7A923CD29603B4A0057ECA1 /* Assets.xcassets */,
 				D7A923CF29603B4A0057ECA1 /* Preview Content */,
 				D72E3DE129688AF700656D7D /* CalendarView.swift */,
 				D72E3DE329688BF100656D7D /* CollectionView.swift */,
 				D72E3DE529688CD600656D7D /* SettingsView.swift */,
 				D72E3DEA2969A92F00656D7D /* DropdownView.swift */,
+				49DBC7ED29733D5600D76617 /* MenuView.swift */,
+				49DBC7EF2973468800D76617 /* SubjectView.swift */,
 			);
 			path = dexter;
 			sourceTree = "<group>";
@@ -207,7 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7A923D129603B4A0057ECA1 /* Preview Assets.xcassets in Resources */,
-				D7A923CE29603B4A0057ECA1 /* Assets.xcassets in Resources */,
+				49DBC7EC2972140400D76617 /* Assets.xcassets in Resources */,
 				49C23DE5297091450039F961 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,9 +232,11 @@
 				D77294282969F8D100F6EBD4 /* Assignments.swift in Sources */,
 				D72E3DE629688CD600656D7D /* SettingsView.swift in Sources */,
 				D7A923E1296040E90057ECA1 /* Util.swift in Sources */,
+				49DBC7F02973468800D76617 /* SubjectView.swift in Sources */,
 				D72E3DEB2969A92F00656D7D /* DropdownView.swift in Sources */,
 				D7A923E3296041830057ECA1 /* LoginView.swift in Sources */,
 				D7A923E5296042750057ECA1 /* HomeView.swift in Sources */,
+				49DBC7EE29733D5600D76617 /* MenuView.swift in Sources */,
 				D772942A296A16DA00F6EBD4 /* Chests.swift in Sources */,
 				D72E3DE429688BF100656D7D /* CollectionView.swift in Sources */,
 				D7A923D829603B660057ECA1 /* RootView.swift in Sources */,

@@ -98,6 +98,7 @@ struct Chests: View {
                 }
             }
             .frame(
+                maxWidth: .infinity,
                 maxHeight: .infinity,
                 alignment: .center
             )
@@ -107,6 +108,6 @@ struct Chests: View {
 
 struct Chests_Previews: PreviewProvider {
     static var previews: some View {
-        RootView().environmentObject(Util())
+        HomeView().environmentObject(Util())
     }
 }

@@ -7,21 +7,34 @@
 
 import SwiftUI
 
-struct Assignment: View  {
+struct AssignmentView: View  {
     var subject: String
     var abbreviation: String
     var points: String
     var time_left: String
     var is_white: Bool
+    var completed: Bool
     
     var title: String
     var description: String
     
+    var line_limit: Int
+    
     private let font_size: CGFloat = 8
+    
+    func calculate_status() -> String {
+        if (completed) {
+            return "Done"
+        }
+        if (!completed && time_left == "0 days") {
+            return "Failed"
+        }
+        return "To Do"
+    }
     
     var body: some View {
         GeometryReader { metrics in
-            HStack {
+            HStack(spacing: -5) {
                 // Left card
                 VStack(alignment: .leading) {
                     
@@ -61,6 +74,26 @@ struct Assignment: View  {
                             )
                             .foregroundColor(is_white ? Color.white : Color.black)
                         Text(time_left)
+                            .font(
+                                .system(
+                                    size: font_size,
+                                    weight: .regular
+                                )
+                            )
+                            .foregroundColor(is_white ? Color.white : Color.black)
+                    }
+                    
+                    // Status
+                    HStack(spacing: 2) {
+                        Text("Status:")
+                            .font(
+                                .system(
+                                    size: font_size,
+                                    weight: .bold
+                                )
+                            )
+                            .foregroundColor(is_white ? Color.white : Color.black)
+                        Text(calculate_status())
                             .font(
                                 .system(
                                     size: font_size,
@@ -109,7 +142,7 @@ struct Assignment: View  {
                             )
                         )
                         .foregroundColor(Color.black.opacity(0.5))
-                        .lineLimit(2)
+                        .lineLimit(line_limit)
                 }
                 .padding(.all, 10.0)
                 .frame(
@@ -139,19 +172,18 @@ struct Assignments: View {
     var body: some View {
         VStack {
             VStack {
-                Assignment(subject: "math", abbreviation: "MAT", points: "50", time_left: "1 day",
+                AssignmentView(subject: "math", abbreviation: "MAT", points: "50", time_left: "1 day",
                            is_white: true,
-                           title: "GEOMETRY 1 - Pythagorean theorem basics",
-                           description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023)."
+                               completed: false, title: "GEOMETRY 1 - Pythagorean theorem basics",
+                               description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", line_limit: 2
                 )
-                Assignment(subject: "chemistry", abbreviation: "CHEM", points: "40", time_left: "2 days",
-                           is_white: false,
+                AssignmentView(subject: "chemistry", abbreviation: "CHEM", points: "40", time_left: "2 days",
+                               is_white: false, completed: false,
                            title: "GEOMETRY 1 - Pythagorean theorem basics",
-                           description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).")
-                Assignment(subject: "history", abbreviation: "HIS", points: "40", time_left: "2 days",
-                           is_white: true,
-                           title: "GEOMETRY 1 - Pythagorean theorem basics",
-                           description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).")
+                           description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", line_limit: 2)
+                AssignmentView(subject: "history", abbreviation: "HIS", points: "40", time_left: "2 days",
+                               is_white: true, completed: false, title: "GEOMETRY 1 - Pythagorean theorem basics",
+                           description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", line_limit: 2)
             }
             .padding(.bottom, 130.0)
             .padding(.horizontal, 20.0)
@@ -176,6 +208,6 @@ struct Assignments: View {
 
 struct Assignments_Previews: PreviewProvider {
     static var previews: some View {
-        RootView().environmentObject(Util())
+        HomeView().environmentObject(Util())
     }
 }

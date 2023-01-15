@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+extension Date {
+    // https://stackoverflow.com/a/52704760
+    static func from(year: Int, month: Int, day: Int) -> Date? {
+        let calendar = Calendar(identifier: .gregorian)
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        dateComponents.month = month
+        dateComponents.day = day
+        return calendar.date(from: dateComponents) ?? nil
+    }
+}
+
 struct Theme {
     static let yellow =     Color("yellow")
     static let dark_gray =  Color("dark_gray")
@@ -99,6 +111,16 @@ struct Subject {
     }
 }
 
+struct UtilAssignment: Identifiable {
+    let id = UUID()
+    public let title: String
+    public let description: String
+    public let ponints: Int
+    public let completed: Bool
+    public let score: Int
+    public let due_date: Date
+}
+
 struct FlatGlassView : ViewModifier {
     func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
@@ -116,15 +138,6 @@ struct FlatGlassView : ViewModifier {
 }
 
 class Util: ObservableObject {
-    public enum Page {
-        case login
-        case home
-        case calendar
-        case collection
-        case chest
-        case settings
-        case subject
-    }
     
     // Calendar - date
     
@@ -178,6 +191,13 @@ class Util: ObservableObject {
     
     // Pages
     
+    public enum Page {
+        case login
+        case home
+        case chest
+        case subject
+    }
+    
     @Published var page = Page.login
     
     func set_page(_page: Page) {
@@ -191,4 +211,105 @@ class Util: ObservableObject {
     func get_points() -> CGFloat {
         return points
     }
+    
+    // Collection - collected
+    
+    struct Card {
+        let number: Int
+    }
+    
+    @Published var collected: [Int : Bool] = [
+        1: false,
+        2: true,
+        3: true,
+        4: false,
+        5: true,
+        6: true,
+        7: false,
+        8: true,
+        9: true,
+        10: true,
+        11: true,
+        12: false,
+        13: true,
+        14: false,
+        15: false,
+        16: true,
+        17: true,
+        18: false,
+        19: true,
+        20: true,
+        21: false,
+        22: false,
+        23: false,
+        24: true,
+        25: true,
+        26: true,
+        27: true,
+        28: false,
+        29: true,
+        30: false,
+    ]
+    
+    @Published var collection_size: Int = 30
+    
+    @Published var showing_card: Bool = false
+    @Published var showing_card_index: Int = 0
+    
+    // Settings - user
+    
+    @Published var username: String = "Janez Primer"
+    @Published var nickname: String = "XxGamerxX"
+    @Published var email: String = "89211190@student.upr.si"
+    @Published var class_: String = "9C"
+    
+    // Settings - settings
+    
+    @Published var language: String = "en"
+    @Published var notifications: Bool = false
+    @Published var sound: Bool = false
+    @Published var haptics: Bool = false
+    @Published var motion: Bool = false
+    
+    // Subjects - selected
+    
+    @Published var selected_subject: String = ""
+    
+    @Published var assignments: [String : [UtilAssignment]] = [
+        "art":  [
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: false, score: 0, due_date: Date.from(year: 2023, month: 3, day: 18)!)
+        ],
+        "biology":  [
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: false, score: 0, due_date: Date.from(year: 2023, month: 3, day: 18)!),
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: true, score: 87, due_date: Date.from(year: 2023, month: 3, day: 18)!),
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: false, score: 0, due_date: Date.from(year: 2023, month: 3, day: 18)!),
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: true, score: 100, due_date: Date.from(year: 2023, month: 3, day: 18)!),
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: true, score: 96, due_date: Date.from(year: 2023, month: 3, day: 18)!)
+        ],
+        "chemistry":  [
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: false, score: 0, due_date: Date.from(year: 2023, month: 3, day: 18)!)
+        ],
+        "english":  [
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: false, score: 0, due_date: Date.from(year: 2023, month: 3, day: 18)!)
+        ],
+        "geography":  [
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: false, score: 0, due_date: Date.from(year: 2023, month: 3, day: 18)!)
+        ],
+        "history":  [
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: false, score: 0, due_date: Date.from(year: 2023, month: 3, day: 18)!)
+        ],
+        "math":  [
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: false, score: 0, due_date: Date.from(year: 2023, month: 3, day: 18)!)
+        ],
+        "pe":  [
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: false, score: 0, due_date: Date.from(year: 2023, month: 3, day: 18)!)
+        ],
+        "physics":  [
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: false, score: 0, due_date: Date.from(year: 2023, month: 3, day: 18)!)
+        ],
+        "spanish":  [
+            UtilAssignment(title: "GEOMETRY 1 - Pythagorean theorem basics", description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a, 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", ponints: 50, completed: false, score: 0, due_date: Date.from(year: 2023, month: 3, day: 18)!)
+        ]
+    ]
+
 }

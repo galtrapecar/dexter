@@ -42,7 +42,6 @@ struct CustomTabBarStyle: TabBarStyle {
             RoundedRectangle(cornerRadius: 15.0)
                 .fill(.ultraThinMaterial)
                 .frame(height: 100.0, alignment: .topTrailing)
-                .opacity(0.5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 15.0)
                         .stroke(.white, lineWidth: 0.4)
@@ -62,7 +61,6 @@ struct CustomTabItemStyle: TabItemStyle {
             if (title == "") {
                 RoundedRectangle(cornerRadius: 999.0)
                     .fill(.ultraThinMaterial)
-                    .opacity(0.6)
                     .overlay(
                         Circle()
                             .stroke(.white, lineWidth: 0.4)
@@ -104,7 +102,7 @@ struct RootView: View {
                 CalendarView()
                     .tabItem(for: Item.second)
                 
-                CalendarView()
+                MenuView()
                     .tabItem(for: Item.third)
                 
                 CollectionView()
@@ -115,6 +113,8 @@ struct RootView: View {
             }
             .tabBar(style: CustomTabBarStyle())
             .tabItem(style: CustomTabItemStyle())
+        case .subject:
+            SubjectView()
         case _:
             VStack {
                 Text("Error")
