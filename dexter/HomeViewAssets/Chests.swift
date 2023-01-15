@@ -18,7 +18,7 @@ enum ChestType {
             case .stone:    return "stone"
             case .gold:     return "gold"
         }
-      }
+    }
 }
 
 struct Chest: View {
@@ -69,6 +69,12 @@ struct Chest: View {
                             self.animate.toggle()
                             timer = Timer.publish(every: 0.4, on: .main, in: .common).autoconnect()
                         }
+                    }
+                }
+                .onTapGesture {
+                    if (openable && !open) {
+                        util.chest_to_open = type
+                        util.set_page(_page: .chest)
                     }
                 }
         }

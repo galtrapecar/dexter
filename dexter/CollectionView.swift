@@ -53,8 +53,10 @@ struct Card: View {
                 .opacity(0.5)
         )
         .onTapGesture {
-            util.showing_card = true
-            util.showing_card_index = index
+            if (util.collected[index] != nil && util.collected[index]!) {
+                util.showing_card = true
+                util.showing_card_index = index
+            }
         }
     }
 }
@@ -174,10 +176,16 @@ struct CollectionView: View {
     @State private var isRotating = 0.0
     
     func format_collected() -> String {
-        let count = String(util.collected.count)
+        var count = 0
         
-        if count.count == 1 { return "0" + count + "/" + String(util.collection_size) }
-        if count.count > 1 { return count + "/" + String(util.collection_size) }
+        for i in 1...util.collection_size {
+            if util.collected[i] != nil && util.collected[i]! {
+                count = count + 1
+            }
+        }
+        
+        if String(count).count == 1 { return "0" + String(count) + "/" + String(util.collection_size) }
+        if String(count).count > 1 { return String(count) + "/" + String(util.collection_size) }
             
         return "ERR"
     }

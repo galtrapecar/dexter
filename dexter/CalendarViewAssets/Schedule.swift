@@ -63,6 +63,10 @@ struct SubjectCard: View {
                 .strokeBorder(.black, lineWidth: 2.0)
                 .opacity(0.2)
         )
+        .onTapGesture {
+            util.selected_subject = subject
+            util.page = .subject
+        }
     }
 }
 
@@ -190,11 +194,37 @@ struct Schedule: View {
             )
             
             HStack(spacing: 10) {
-                SubjectColumn(day: util.monday_subjects)
-                SubjectColumn(day: util.tuesday_subjects)
-                SubjectColumn(day: util.wednesday_subjects)
-                SubjectColumn(day: util.thursday_subjects)
-                SubjectColumn(day: util.friday_subjects)
+                if util.week == 1 {
+                    SubjectColumn(day: util.monday_subjects)
+                    SubjectColumn(day: util.tuesday_subjects)
+                    SubjectColumn(day: util.wednesday_subjects)
+                    SubjectColumn(day: util.thursday_subjects)
+                    SubjectColumn(day: util.friday_subjects)
+                }
+                
+                if util.week == 3 {
+                    SubjectColumn(day: util.monday_subjects)
+                    SubjectColumn(day: util.wednesday_subjects)
+                    SubjectColumn(day: util.tuesday_subjects)
+                    SubjectColumn(day: util.friday_subjects)
+                    SubjectColumn(day: util.thursday_subjects)
+                }
+                
+                if util.week == 2 {
+                    SubjectColumn(day: util.friday_subjects)
+                    SubjectColumn(day: util.monday_subjects)
+                    SubjectColumn(day: util.thursday_subjects)
+                    SubjectColumn(day: util.tuesday_subjects)
+                    SubjectColumn(day: util.wednesday_subjects)
+                }
+                
+                if util.week == 4 {
+                    SubjectColumn(day: util.tuesday_subjects)
+                    SubjectColumn(day: util.wednesday_subjects)
+                    SubjectColumn(day: util.monday_subjects)
+                    SubjectColumn(day: util.thursday_subjects)
+                    SubjectColumn(day: util.friday_subjects)
+                }
             }
             .frame(
                 height: UIScreen.main.bounds.height * 0.57

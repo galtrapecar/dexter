@@ -16,6 +16,7 @@
 		49DBC7EC2972140400D76617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DBC7EB2972140400D76617 /* Assets.xcassets */; };
 		49DBC7EE29733D5600D76617 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBC7ED29733D5600D76617 /* MenuView.swift */; };
 		49DBC7F02973468800D76617 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBC7EF2973468800D76617 /* SubjectView.swift */; };
+		49DBC7F229745E3100D76617 /* ChestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBC7F129745E3100D76617 /* ChestView.swift */; };
 		D72E3DE229688AF700656D7D /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72E3DE129688AF700656D7D /* CalendarView.swift */; };
 		D72E3DE429688BF100656D7D /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72E3DE329688BF100656D7D /* CollectionView.swift */; };
 		D72E3DE629688CD600656D7D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72E3DE529688CD600656D7D /* SettingsView.swift */; };
@@ -39,6 +40,7 @@
 		49DBC7EB2972140400D76617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49DBC7ED29733D5600D76617 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		49DBC7EF2973468800D76617 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
+		49DBC7F129745E3100D76617 /* ChestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestView.swift; sourceTree = "<group>"; };
 		D72E3DE129688AF700656D7D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		D72E3DE329688BF100656D7D /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		D72E3DE529688CD600656D7D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				D72E3DEA2969A92F00656D7D /* DropdownView.swift */,
 				49DBC7ED29733D5600D76617 /* MenuView.swift */,
 				49DBC7EF2973468800D76617 /* SubjectView.swift */,
+				49DBC7F129745E3100D76617 /* ChestView.swift */,
 			);
 			path = dexter;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49C23DF12970C5230039F961 /* DateSelection.swift in Sources */,
+				49DBC7F229745E3100D76617 /* ChestView.swift in Sources */,
 				D7A923CA29603B490057ECA1 /* dexterApp.swift in Sources */,
 				D72E3DE229688AF700656D7D /* CalendarView.swift in Sources */,
 				D7AEFC702967883500EFA6C5 /* ProgressBar.swift in Sources */,

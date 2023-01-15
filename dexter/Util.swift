@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseFirestoreSwift
 
 extension Date {
     // https://stackoverflow.com/a/52704760
@@ -312,4 +313,7 @@ class Util: ObservableObject {
         ]
     ]
 
+    // Chest - selected
+
+    @Published var chest_to_open: ChestType = .wood
 }

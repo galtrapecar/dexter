@@ -115,6 +115,8 @@ struct RootView: View {
             .tabItem(style: CustomTabItemStyle())
         case .subject:
             SubjectView()
+        case .chest:
+            ChestView()
         case _:
             VStack {
                 Text("Error")
