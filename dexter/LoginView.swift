@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseCore
-import FirebaseAuth
 
 extension View {
     func placeholder<Content: View>(
@@ -61,21 +59,22 @@ struct Login: View {
             return
         }
         signInProcessing = true
-        Auth.auth().signIn(withEmail: username, password: password) { result, error in
-            guard error == nil else {
-                signInProcessing = false
-                return login_failed(error: error?.localizedDescription ?? "")
-            }
-
-            switch result {
-            case .none:
-                login_failed(error: "")
-            case .some(_):
-                login_success()
-            }
+//        Auth.auth().signIn(withEmail: username, password: password) { result, error in
+//            guard error == nil else {
+//                signInProcessing = false
+//                return login_failed(error: error?.localizedDescription ?? "")
+//            }
+//
+//            switch result {
+//            case .none:
+//                login_failed(error: "")
+//            case .some(_):
+//                login_success()
+//            }
+        login_success()
             
-            signInProcessing = false
-        }
+        signInProcessing = false
+//        }
     }
 
     func login_failed(error: String) {

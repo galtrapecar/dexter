@@ -32,7 +32,7 @@ struct Chest: View {
     
     var body: some View {
         ZStack {
-            if (openable) {
+            if (openable && !open) {
                 Image("godrays")
                     .resizable()
                     .frame(
@@ -46,26 +46,27 @@ struct Chest: View {
                                 isRotating = 360.0
                         }
                     }
+                    .allowsHitTesting(false)
             }
             
-            Image(type.description)
+            Image(open ? (type.description + "_open") : type.description)
                 .resizable()
                 .scaledToFit()
                 .frame(
                     width: type == .gold ? 100.0 : 80.0,
                     height: type == .gold ? 100.0 : 80.0
                 )
-                .offset(x: animate ? -5.0 : 0)
+                .offset(x: animate && !open ? -5.0 : 0)
                 .onAppear {
-                    if (!openable) {
+                    if (!openable || open) {
                         timer.upstream.connect().cancel()
                     }
                 }
-                .animation(animate ? Animation.linear(duration: 0.1).repeatForever(autoreverses: true) : Animation.easeOut(duration: 0.1))
+                .animation(animate && !open ? Animation.linear(duration: 0.1).repeatForever(autoreverses: true) : Animation.easeOut(duration: 0.1), value: animate)
                 .onReceive(timer) { _ in
                     timer.upstream.connect().cancel()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                        if (openable){
+                        if (openable && !open){
                             self.animate.toggle()
                             timer = Timer.publish(every: 0.4, on: .main, in: .common).autoconnect()
                         }
@@ -98,9 +99,9 @@ struct Chests: View {
         GeometryReader { metrics in
             VStack {
                 HStack {
-                    Chest(openable: util.get_points() >= 50.0, open: false, type: .wood).offset(y: 25.0)
-                    Chest(openable: util.get_points() == 100,  open: false, type: .gold)
-                    Chest(openable: util.get_points() >= 75.0, open: false, type: .stone).offset(y: 25.0)
+                    Chest(openable: util.get_points() >= 50.0, open: util.wood_collected, type: .wood).offset(y: 25.0)
+                    Chest(openable: util.get_points() == 100,  open: util.gold_collected, type: .gold)
+                    Chest(openable: util.get_points() >= 75.0, open: util.stone_collected, type: .stone).offset(y: 25.0)
                 }
             }
             .frame(

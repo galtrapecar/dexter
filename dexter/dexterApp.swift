@@ -6,20 +6,20 @@
 //
 
 import SwiftUI
-import Firebase
+//import Firebase
 
 let util: Util = Util()
 
-class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-    return true
-  }
-}
+//class AppDelegate: NSObject, UIApplicationDelegate {
+//  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+//    FirebaseApp.configure()
+//    return true
+//  }
+//}
 
 @main
 struct dexterApp: App {
-    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
+//    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
     var body: some Scene {
         WindowGroup {
             RootView()

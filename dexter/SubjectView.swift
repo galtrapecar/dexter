@@ -26,7 +26,7 @@ struct AssignmentsView: View {
     
     var body: some View {
         ForEach(assignments, id: \.id) { _assignment in
-            AssignmentView(subject: _assignment.completed ? "completed" : subject, abbreviation: String(AssignmentIndex.get_index()), points: String(_assignment.ponints), time_left: "2 days",
+            AssignmentView(subject: _assignment.completed ? "completed" : subject, abbreviation: String(AssignmentIndex.get_index()), points: String(_assignment.points), time_left: "2 days",
                        is_white: false,
                            completed: _assignment.completed,
                            title: _assignment.title,
