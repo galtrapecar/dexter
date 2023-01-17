@@ -165,6 +165,10 @@ struct AssignmentView: View  {
                 alignment: .leading
             )
         }
+        .onTapGesture {
+            if (completed) {return}
+            util.selected_assignment = Int(abbreviation) ?? 0
+        }
     }
 }
 
@@ -176,14 +180,14 @@ struct Assignments: View {
                            is_white: true,
                                completed: false, title: "GEOMETRY 1 - Pythagorean theorem basics",
                                description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", line_limit: 2
-                )
+                ).allowsHitTesting(false)
                 AssignmentView(subject: "chemistry", abbreviation: "CHEM", points: "40", time_left: "2 days",
                                is_white: false, completed: false,
                            title: "GEOMETRY 1 - Pythagorean theorem basics",
-                           description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", line_limit: 2)
+                           description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", line_limit: 2).allowsHitTesting(false)
                 AssignmentView(subject: "history", abbreviation: "HIS", points: "40", time_left: "2 days",
                                is_white: true, completed: false, title: "GEOMETRY 1 - Pythagorean theorem basics",
-                           description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", line_limit: 2)
+                           description: "Open “NEW ELEMENTARY MATHEMATICS” on page 137 and do exercises 17, 18, 19a 23, 24 and 27 (examples a. - g.). Submit your work by Tuesday (12. 10. 2023).", line_limit: 2).allowsHitTesting(false)
             }
             .padding(.bottom, 130.0)
             .padding(.horizontal, 20.0)
