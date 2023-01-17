@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		49C23DE5297091450039F961 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C23DE4297091450039F961 /* GoogleService-Info.plist */; };
-		49C23DEA2970B2910039F961 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 49C23DE92970B2910039F961 /* FirebaseAuth */; };
-		49C23DEC2970B2970039F961 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 49C23DEB2970B2970039F961 /* FirebaseFirestore */; };
-		49C23DEE2970B29E0039F961 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 49C23DED2970B29E0039F961 /* FirebaseFirestoreSwift */; };
 		49C23DF12970C5230039F961 /* DateSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C23DF02970C5230039F961 /* DateSelection.swift */; };
 		49C23DF42970C9F60039F961 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C23DF32970C9F60039F961 /* Schedule.swift */; };
 		49DBC7EC2972140400D76617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DBC7EB2972140400D76617 /* Assets.xcassets */; };
@@ -63,9 +60,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D72E3DE929699B1900656D7D /* TabBar in Frameworks */,
-				49C23DEA2970B2910039F961 /* FirebaseAuth in Frameworks */,
-				49C23DEC2970B2970039F961 /* FirebaseFirestore in Frameworks */,
-				49C23DEE2970B29E0039F961 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +159,6 @@
 			name = dexter;
 			packageProductDependencies = (
 				D72E3DE829699B1900656D7D /* TabBar */,
-				49C23DE92970B2910039F961 /* FirebaseAuth */,
-				49C23DEB2970B2970039F961 /* FirebaseFirestore */,
-				49C23DED2970B29E0039F961 /* FirebaseFirestoreSwift */,
 			);
 			productName = dexter;
 			productReference = D7A923C629603B490057ECA1 /* dexter.app */;
@@ -199,7 +190,6 @@
 			mainGroup = D7A923BD29603B490057ECA1;
 			packageReferences = (
 				D72E3DE729699B1900656D7D /* XCRemoteSwiftPackageReference "TabBar" */,
-				49C23DE7297098D50039F961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D7A923C729603B490057ECA1 /* Products */;
 			projectDirPath = "";
@@ -453,14 +443,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		49C23DE7297098D50039F961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
 		D72E3DE729699B1900656D7D /* XCRemoteSwiftPackageReference "TabBar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onl1ner/TabBar.git";
@@ -472,21 +454,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		49C23DE92970B2910039F961 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 49C23DE7297098D50039F961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		49C23DEB2970B2970039F961 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 49C23DE7297098D50039F961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		49C23DED2970B29E0039F961 /* FirebaseFirestoreSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 49C23DE7297098D50039F961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
-		};
 		D72E3DE829699B1900656D7D /* TabBar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D72E3DE729699B1900656D7D /* XCRemoteSwiftPackageReference "TabBar" */;
