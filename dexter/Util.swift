@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseFirestoreSwift
 import GameplayKit
 
 extension Date {
