@@ -8,3 +8,5 @@
   - dexter (xcode symbol) > TARGETS > General > iOS
 - Build the app by pressing the play button in XCode
 
+Video of the app:
+  https://m.youtube.com/watch?v=8id5Wxq0H3A
